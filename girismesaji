@@ -1,1 +1,5 @@
 
+client.addListener("guildMemberAdd", async function(member) {
+  if (member.user.bot) return;
+  return member.user.send(`**Sunucumuza hoşgeldin umarım iyi vakit geçirirsin**`).catch(err => console.log("Bu kişinin dm kutusu kapalı!"))
+})
