@@ -1,0 +1,30 @@
+const Discord = require("discord.js")
+
+module.exports.run = async function(client, message, args) {
+
+
+// Komutu Kullanabilecek Rol ID aşağıya girilecektir.
+if (!message.member.roles.cache.has("Rol ID)) return message.reply("Üzgünüm, bu komutu kullanmak için gerekli role sahip degilsin.")
+
+const user = message.mentions.users.first()
+
+if (p!member) return message.reply("Bir kullanıcı etiketlemelisin.")
+
+const nick = args.join(" ")
+
+if (p!isim) return message.reply("Ayarlanak isimi girmelisin")
+
+user.setNickname(nick).catch(err => message.channel.send("Isim değiştirirken hata meydana geldi."))
+
+return message.channel.send(`Başarıyla, ${user} kullanıcısının ismi \`${nick}\` olarak ayarlandı.`)
+}
+module.exports.conf = {
+enabled: true,
+guildOnly: true,
+aliases: [],
+permLevel: 0
+}
+module.exports.help = {
+name: "nick"
+usage: "prefixnick"
+}
